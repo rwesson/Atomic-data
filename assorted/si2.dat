@@ -1,0 +1,36 @@
+6
+ !! Si II fine structure ground term only !!
+ NB New Upsilons from Hibbert ? to be added when ref. is found!
+ Upsilons - Dufton 1991
+ Aij from Storey (unpubl)
+ E lev. from NIST database (Martin,W.C. & Zalubas,R.J.
+  J.Phys.Chem.Ref.Data, 12, 323. 1983)                            CJP 1-5-96
+ 2 15 0
+ 3p  2P1/2
+ 3p  2P3/2
+ 2000
+ 4000
+ 6000
+ 8000
+ 10000
+ 12000
+ 14000
+ 16000
+ 18000
+ 20000
+ 30000
+ 40000
+ 50000
+ 100000
+ 200000
+0.
+1 2 5.58
+0 0 5.61
+0 0 5.70
+0 0 5.79
+0 0 5.75
+0 0 5.47
+0 0 0
+1 2 2.13E-4
+1 2 0.0
+2 4 287.24

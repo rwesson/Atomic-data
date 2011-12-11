@@ -1,0 +1,85 @@
+ 30
+** Atomic data from version 6 of the CHIANTI database **
+%Observed energy levels (n=2): Edlen, B., 1983, Physica Scripta, 28, 51
+%Observed energy levels (n=3): Gordon, H., Hobby, M.G., Peacock, N.J. 1980, J.Phys. B, 13, 1985
+%Observed energy levels (52): Landi, E., Phillips., K.J.H. 2005, ApJS, 160, 286
+%Observed energy levels (29,60,64): Gu, M.F., Beiersdorfer, P., Brown, G.V., Chen, H., Thorn, D.B., Kahn, S.M. 2007, ApJ, 657, 1172
+%Theoretical energy levels: Witthoeft, M.C., Whiteford, A.D., & Badnell, N.R. 2007, J.Phys.B, 40, 2969
+% produced as part of the Arcetri/Cambridge/NRL 'CHIANTI' atomic data base collaboration
+%
+%   E. Landi - Mar 2007
+%filename: ni_20.wgfa
+%Observed energy levels (n=2): Edlen, B., 1983, Physica Scripta, 28, 51
+%Observed energy levels (n=3): Gordon, H., Hobby, M.G., Peacock, N.J. 1980, J.Phys. B, 13, 1985
+%Observed energy levels (52): Landi, E., Phillips., K.J.H. 2005, ApJS, 160, 286
+%Observed energy levels (29,60,64): Gu, M.F., Beiersdorfer, P., Brown, G.V., Chen, H., Thorn, D.B., Kahn, S.M. 2007, ApJ, 657, 1172
+%Theoretical energy levels: Witthoeft, M.C., Whiteford, A.D., & Badnell, N.R. 2007, J.Phys.B, 40, 2969
+%Radiative data: Witthoeft, M.C., Whiteford, A.D., & Badnell, N.R. 2007, J.Phys.B, 40, 2969
+% produced as part of the Arcetri/Cambridge/NRL 'CHIANTI' atomic data base collaboration
+%
+% E. Landi - Mar 2007
+
+%filename: ni_20.splups
+%Oscillator strengths: Witthoeft, M.C., Whiteford, A.D., & Badnell, N.R. 2007, J.Phys.B, 40, 2969
+%Effective collision strengths:  Witthoeft, M.C., Whiteford, A.D., & Badnell, N.R. 2007, J.Phys.B, 40, 2969
+%comment: effective collision strengths are published for temperatures in the range  4.9 < Log T <  8.9
+%comment: effective collision strengths are USED for temperatures in the range  5.5 < Log T <  7.9
+%comment: data at very high or very low temperatures were sometimes discarded to improve the fit. At these
+     temperatures the Ni XX abundance is negligible under equilibrium.
+% produced as part of the Arcetri/Cambridge/NRL 'CHIANTI' atomic data base collaboration
+%
+% E. Landi - Feb 2007
+ 2 23
+  1  2s2.2p5 2P3/2
+  2  2s2.2p5 2P1/2
+     100.0
+     158.5
+     251.2
+     398.1
+     631.0
+    1000.0
+    1584.9
+    2511.9
+    3981.1
+    6309.6
+   10000.0
+   15848.9
+   25118.9
+   39810.7
+   63095.8
+  100000.0
+  158489.2
+  251188.7
+  398107.1
+  630957.6
+ 1000000.0
+ 1584892.5
+ 2511887.0
+0
+  1  2   5.99e-02
+  0  0   5.99e-02
+  0  0   5.99e-02
+  0  0   5.99e-02
+  0  0   5.99e-02
+  0  0   5.99e-02
+  0  0   5.99e-02
+  0  0   6.00e-02
+  0  0   6.00e-02
+  0  0   6.00e-02
+  0  0   6.01e-02
+  0  0   6.02e-02
+  0  0   6.04e-02
+  0  0   6.07e-02
+  0  0   6.11e-02
+  0  0   6.18e-02
+  0  0   6.28e-02
+  0  0   6.44e-02
+  0  0   6.68e-02
+  0  0   6.99e-02
+  0  0   7.38e-02
+  0  0   7.96e-02
+  0  0   9.17e-02
+ 0 0 0
+  1  2   5.640e+04
+  1  4        0.0
+  2  2   143965.7

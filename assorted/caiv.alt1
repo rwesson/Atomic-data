@@ -1,0 +1,23 @@
+2
+ Ca IV  Coll. strength from Krueger and Czyzak (Proc.R.Soc.A318,531,1970)
+        Aij from Mendoza and Zeippen (Mendoza 1983) Entered by MJB 12-Feb 1990
+ 2 6 0
+ 2P(3/2)
+ 2P(1/2)
+ 1
+ 5000
+ 7500
+ 10000
+ 15000
+ 20000
+0.
+ 1 2 1.06  0
+ 0 0 1.06  5000
+ 0 0 1.06  7500
+ 0 0 1.06 10000
+ 0 0 1.06 15000
+ 0 0 1.06 20000
+0 0 0
+ 1 2 0.545
+ 1 4 0
+ 2 2 3117.9

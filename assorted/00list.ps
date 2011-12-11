@@ -1,0 +1,339 @@
+%!PS-Adobe-3.0
+%%Creator: A2ps version 4.3
+%%CreationDate: Thu Jul  2 17:33:55 1998
+%%Pages: (atend)
+%%DocumentFonts: Courier Courier-Bold Helvetica Helvetica-Bold
+%%EndComments
+% Copyright (c) 1993, 1994, Miguel Santana, M.Santana@frgu.bull.fr
+
+/$a2psdict 100 dict def
+$a2psdict begin
+
+% General macros.
+/xdef {exch def} bind def
+/getfont {exch findfont exch scalefont} bind def
+
+% Create Courier backspace font
+/backspacefont {
+    /Courier findfont dup length dict begin
+	{ % forall
+	    1 index /FID eq { pop pop } { def } ifelse
+	} forall
+	currentdict /UniqueID known { % if
+	    /UniqueID UniqueID 16#800000 xor def
+	} if
+	CharStrings length 1 add dict begin
+	    CharStrings { def } forall
+	    /backspace { -600 0 0 0 0 0 setcachedevice } bind def
+	    currentdict
+	end
+	/CharStrings exch def
+	/Encoding Encoding 256 array copy def
+	Encoding 8 /backspace put
+	currentdict
+    end
+    definefont pop
+} bind def
+
+% FUNCTIONS
+
+% Function filename: Initialize file printing.
+/fn
+{ /filenm xdef
+  /filenmwidth filenm stringwidth pop def
+  /filenmfont
+       filenmwidth fns gt
+       {
+	       filenmfontname
+	       fnfs fns mul filenmwidth div
+	     getfont
+       }
+       { sfnf }
+     ifelse
+  def
+} bind def
+
+% Function header: prints page header. no page
+% is passed as argument.
+/hp
+  { x sd get  y sd get hs sub 1 add  moveto
+    df setfont
+    gsave
+      x sd get y sd get moveto
+      0 hs 2 div neg rmoveto 
+      hs setlinewidth
+      0.95 setgray
+      pw 0 rlineto stroke
+    grestore
+    gsave
+      dfs hm rmoveto
+      d show				% date/hour
+    grestore
+    gsave
+      pnum cvs pop				% page pop up
+        pw (Page 999) stringwidth pop sub
+        hm
+	  rmoveto
+      (Page ) show pnum show		% page number
+    grestore
+    empty pnum copy pop
+    gsave
+      filenmfont setfont
+         fns filenm stringwidth pop sub 2 div dw add
+          bm 2 mul 
+        add 
+        hm
+      rmoveto
+        filenm show			% file name
+      grestore
+    } bind def
+
+% Function border: prints border page
+/border 
+{ x sd get y sd get moveto
+  gsave				% print four sides
+    0.7 setlinewidth		% of the square
+    pw 0 rlineto
+    0 ph neg rlineto
+    pw neg 0 rlineto
+    closepath stroke
+  grestore
+} bind def
+
+% Function hborder: completes border of the header.
+/hborder 
+{ gsave
+	0.7 setlinewidth
+	0 hs neg rmoveto
+	pw 0 rlineto
+	stroke
+  grestore
+} bind def
+
+% Function sheetnumber: prints the sheet number.
+/sn
+    { snx sny moveto
+      df setfont
+      pnum cvs
+	  dup stringwidth pop (0) stringwidth pop sub neg 0 rmoveto show
+      empty pnum copy pop
+    } bind def
+
+% Function loginprint: prints the login id of the requestor.
+/lgp
+    { lx ly moveto
+      df setfont
+      dup stringwidth pop neg 0 rmoveto show
+    } bind def
+
+% Function currentdate: prints the current date.
+/cd
+    { dx dy moveto
+      df setfont
+      (Printed: ) show
+      td show
+    } bind def
+
+% Function filename_footer: prints the file name at bottom of page.
+/fnf
+    { fnx fny moveto
+      df setfont
+      filenm center show
+    } bind def
+
+% Function center: centers text.
+/center
+    { dup stringwidth pop
+      2 div neg 0 rmoveto
+    } bind def
+
+% Function s: print a source line
+/s  { show
+      /y0 y0 bfs sub def
+      x0 y0 moveto
+    } bind def
+
+% Functions b and st: change to bold or standard font
+/b  { show
+      bdf setfont
+    } bind def
+/st { show
+      bf setfont
+    } bind def
+
+% Strings used to make easy printing numbers
+/pnum 12 string def
+/empty 12 string def
+
+% Global initializations
+
+/CourierBack backspacefont
+/filenmfontname /Helvetica-Bold def
+/inch {72 mul} bind def
+
+%
+% Meaning of some variables and functions (coded names)
+%
+%	twp:		twinpages?
+%	sd:		sheet side
+%	l:		line counter
+%	c:		column counter
+%	d:		date
+%	td:		current date (for today)
+%	lg:		login name
+%	fn:		filename printing function
+%	sn:		sheetnumber printing function
+%	cd:		current date printing function
+%	fnf:		filename footer printing function
+%	lgp:		login printing function
+%	hp:		header printing function
+%	y:		y coordinate for the logical page
+%	x:		x coordinate for the logical page
+%	sny:		y coordinate for the sheet number
+%	snx:		x coordinate for the sheet number
+%	dy:		y coordinate for the date
+%	dx:		x coordinate for the date
+%	ly:		y coordinate for the login
+%	lx:		x coordinate for the login
+%	scx:		x coordinate for the sheet center
+%	fny:		y coordinate for the filename (footer)
+%	fnx:		x coordinate for the filename (footer)
+%	fnfs:		filename font size
+%	bfs:		body font size
+%	dfs:		date font size
+%	bfs:		body font size
+%	df:		date font
+%	bf:		body font
+%	bdf:		bold font
+%	sfnf:		standard filename font
+%	dw:		date width
+%	pw:		page width
+%	sw:		sheet width
+%	ph:		page height
+%	sh:		sheet height
+%	hm:		header margin
+%	tm:		top margin
+%	bm:		body margin
+%	rm:		right margin
+%	lm:		left margin
+%	hs:		header size
+%	fns:		filename size
+
+% Initialize page description variables.
+/x0 0 def
+/y0 0 def
+/sh 11.64 inch def
+/sw 8.27 inch def
+/margin 1.4 inch def
+/rm margin 3 div def
+/lm margin 2 mul 3 div def
+/d () def
+/td (Jul  2 1998 17:33) def
+/lg (Printed by xwl from iso.star.ucl.ac.uk) def
+%%EndProlog
+
+/docsave save def
+%%Page: 1 1
+/pagesave save def
+/twp false def
+/fnfs 15 def
+/dfs fnfs 0.8 mul def
+/df /Helvetica dfs getfont def
+/dw df setfont td stringwidth pop def
+/sfnf filenmfontname fnfs getfont def
+/hm fnfs 0.25 mul def
+/hs 0.29 inch def
+/bfs 12 def
+/bdf /Courier-Bold bfs getfont def
+/bm bfs 0.7 mul def
+/bf /CourierBack bfs getfont def
+/l 58 def
+/c 67 def
+/pw
+   bf setfont (0) stringwidth pop c mul bm dup add add
+   def
+/ph
+   bfs l mul bm dup add add hs add
+   def
+/fns
+      pw
+      fnfs 4 mul dw add (Page 999) stringwidth pop add
+    sub
+  def
+/tm margin twp {3} {2} ifelse div def
+/sd 0 def
+/x [ lm dup ] def
+/sny tm dfs 2 mul sub def
+/snx sw rm sub dfs sub def
+/dy sny def
+/dx lm def
+
+% Only one logical page
+/y [ sh tm sub dup ] def
+/scx sw 2 div def
+/fny dy def
+/fnx scx def
+/ly fnfs 2 div y sd get add def
+/lx snx def
+/d (Jul  2 1998 17:31) def
+( Atomic data ) fn
+1 hp
+/x0 x 0 get bm add def
+/y0 y 0 get bm bfs add hs add sub def
+x0 y0 moveto
+bf setfont
+( aliii.dat        clix.dat         neii.dat         pviii.dpr) s
+( alix.dat         clv.dat          neii.dpr         px.alt1) s
+( alix.dpr         clx.alt1         neiii.dat        px.dat) s
+( alixgrd.dat      clx.dat          neiii.old1       px.dpr) s
+( alv.dat          covi.dat         neiii.old2       px5levs.dat) s
+( alv.dpr          coxi.dat         neiv.dat         pxi.dat) s
+( alvi.dat         criii.dat        nev.alt1         scv.dat) s
+( alvi.dpr         crviii.dat       nev.dat          scxiii.dat) s
+( alvii.dat        crxvi.dat        nev.dpr          si10.dat) s
+( alviii.alt1      fev.dat          nev.old          si10.dpr) s
+( alviii.dat       fevi.dat         nevagg.dat       si10grd.dat) s
+( alviii.dpr       fevii.dat        nevi.dat         si2.alt1) s
+( alviii5levs.dat  fex.dat          nevi.dpr         si2.dat) s
+( arii.dat         fexiv.dat        nevigrd.dat      si3.dat) s
+( ariii.dat        fexviii.dat      ni.dat           si3.old1) s
+( ariii.old        fexxii.dat       ni12.dat         si3.old2) s
+( ariv.dat         fexxii.dpr       ni2.dat          si4.dat) s
+( ariv_new.dat     fii.dat          ni7.dat          si6.dat) s
+( arv.dat          fii.old          nii.dat          si6.dpr) s
+( arvi.alt1        fiv.dat          nii.dpr          si7.dat) s
+( arvi.dat         fiv5levs.dat     nii.old          si7.dpr) s
+( arx.dat          kiii.dat         niii.dat         si8.dat) s
+( arxi.dat         kvii.alt1        niii.old         si9.alt1) s
+( arxi.old         kvii.dat         niii.old.old     si9.dat) s
+( arxiv.dpr        kxi.dat          niv.alt1         si9.dpr) s
+( arxivgrd.dat     mgi24.dat        niv.dat          si95levs.dat) s
+( caiv.alt1        mgi25.dat        nv.dat           sii.alt1) s
+( caiv.dat         mgii.dat         oi.dat           sii.dat) s
+( cavii.dat        mgiv.dat         oi.fs            siii.dat) s
+( caviii.alt1      mgiv.dpr         oi_hi.dat        siiii.dat) s
+( caviii.dat       mgv.dat          oi_hi.def        siinew.dat) s
+( caxii.dat        mgvi.dat         oi_hi.watson     siv.alt1) s
+( caxvi.dpr        mgvii.alt1       oii.dat          siv.dat) s
+( caxvigrd.dat     mgvii.dat        oiii.dat         six.alt1) s
+( ci.dat           mgvii.dpr        oiii.dpr         six.dat) s
+( ci.old           mgviii.dat       oiii15le.dat     sviii.dat) s
+( cii.alt1         mgviii.dpr       oiii_a83.dat     sxi.dat) s
+( cii.dat          mgviiigrd.dat    oiii_a93.dat     sxi.dpr) s
+( cii_hi.dat       mniv.dat         oiii_cjp.dat     sxii.dpr) s
+( ciii.alt1        mnix.dat         oiiibaluja.dat   sxiigrd.dat) s
+( ciii.dat         mnxvii.dat       oiv.alt1         ti14.dat) s
+( ciii10le.dat     naiii.dat        oiv.dat          ti6.dat) s
+( civ.dat          naiv.dat         oiv.dpr          v15.dat) s
+( clii.dat         naiv.dpr         ov.dat           v2.dat) s
+( cliii.dat        navi.dat         piii.dat         v7.dat) s
+( cliii.old        navi5levs.dat    pvii.dat) s
+( cliv.dat         navii.dat        pviii.dat) s
+/sd 0 def
+lg lgp
+pagesave restore
+showpage
+
+%%Trailer
+%%Pages: 1
+docsave restore end
