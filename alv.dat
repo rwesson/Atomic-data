@@ -1,11 +1,12 @@
- 20
-** Atomic data from version 5.2 of the CHIANTI database **
+ 21
+** Atomic data from version 7 of the CHIANTI database **
 %%energy levels: Martin, W.C., Sugar, J., Musgrove, A., Dalton, G.R., 1995,
    NIST Database for Atomic Spectroscopy, Version 1.0, NIST Standard Reference Database 61.
 % theoretical energy levels: extrapolated using Ne II, Mg IV, Si VI, S VIII, Ca XII.
 % Produced as part of the Arcetri/Cambridge/NRL 'CHIANTI' atomic data base collaboration
 %
 % Enrico Landi 1997
+%filename: al_5.wgfa
 %energy levels: Martin, W.C., Sugar, J., Musgrove, A., Dalton, G.R., 1995,
     NIST Database for Atomic Spectroscopy, Version 1.0, NIST Standard Reference Database 61.
 % A values: interpolated using Ne II, Mg IV, Si VI, S VIII, Ca XII.
@@ -19,7 +20,7 @@
 %produced as part of the Arcetri/Cambridge/NRL 'CHIANTI' atomic data base collaboration
 %
 % Enrico Landi 1997
- 2 23 0
+ 2 23
   1  2s2.2p5 2P3/2
   2  2s2.2p5 2P1/2
      100.0
